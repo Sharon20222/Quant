@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ShootingStars</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<h1>✨ ShootingStars Quant Dashboard</h1>
+
+<div class="panel">
+  <input id="ticker" placeholder="Enter ticker (AAPL)">
+  <button onclick="load()">Analyze</button>
+</div>
+
+<div class="grid">
+  <canvas id="chart"></canvas>
+</div>
+
+<div class="grid">
+  <div id="signals"></div>
+  <div id="candles"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
