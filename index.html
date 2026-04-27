@@ -1,22 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ShootingStars</title>
+  <meta charset="UTF-8">
+  <title>ShootingStars Quant Terminal</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
-<h1>ShootingStars Quant Dashboard</h1>
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">⚡ ShootingStars</div>
 
-<input id="ticker" placeholder="Enter ticker (AAPL)">
-<button onclick="run()">Analyze</button>
+  <div class="nav-links">
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('indicators')">Indicators</button>
+    <button onclick="showPage('candles')">Candles</button>
+    <button onclick="showPage('signals')">Signals</button>
+  </div>
+</div>
 
-<canvas id="chart"></canvas>
+<!-- INPUT BAR -->
+<div class="topbar">
+  <input id="ticker" placeholder="Enter ticker (AAPL)">
+  <button onclick="runAnalysis()">Analyze</button>
+</div>
 
-<div id="signals"></div>
-<div id="candles"></div>
+<!-- PAGES -->
+
+<div id="home" class="page active">
+  <h1>Quant Research Dashboard</h1>
+  <p>Multi-factor trading system using real market data, indicators, and signal generation.</p>
+</div>
+
+<div id="indicators" class="page">
+  <h2>Indicators</h2>
+  <div id="indicatorBox"></div>
+</div>
+
+<div id="candles" class="page">
+  <h2>Candlestick Patterns</h2>
+  <div id="candleBox"></div>
+</div>
+
+<div id="signals" class="page">
+  <h2>Trading Signals</h2>
+  <div id="signalBox"></div>
+</div>
 
 <script src="app.js"></script>
 </body>
