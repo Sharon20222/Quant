@@ -1,52 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ShootingStars Quant Terminal</title>
+  <title>ShootingStars Terminal</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
+<header>
   <div class="logo">⚡ ShootingStars</div>
-
-  <div class="nav-links">
+  <nav>
     <button onclick="showPage('home')">Home</button>
     <button onclick="showPage('indicators')">Indicators</button>
     <button onclick="showPage('candles')">Candles</button>
     <button onclick="showPage('signals')">Signals</button>
+  </nav>
+</header>
+
+<section class="search">
+  <input id="ticker" placeholder="Enter ticker (AAPL, TSLA)">
+  <button onclick="runAnalysis()">Analyze</button>
+</section>
+
+<main>
+
+<!-- HOME -->
+<div id="home" class="page active">
+  <h1>Quant Research Terminal</h1>
+  <p class="subtitle">
+    Multi-factor trading system combining technical indicators,
+    candlestick analysis, and signal generation.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Indicators</h3>
+      <p>RSI, MACD, EMA, SMA, Bollinger Bands, OBV and more.</p>
+    </div>
+
+    <div class="card">
+      <h3>Candlestick Patterns</h3>
+      <p>Detect Doji, Hammer, Shooting Star, Engulfing patterns.</p>
+    </div>
+
+    <div class="card">
+      <h3>Signals</h3>
+      <p>Trend, momentum, breakout and reversal signals.</p>
+    </div>
   </div>
 </div>
 
-<!-- INPUT BAR -->
-<div class="topbar">
-  <input id="ticker" placeholder="Enter ticker (AAPL)">
-  <button onclick="runAnalysis()">Analyze</button>
-</div>
-
-<!-- PAGES -->
-
-<div id="home" class="page active">
-  <h1>Quant Research Dashboard</h1>
-  <p>Multi-factor trading system using real market data, indicators, and signal generation.</p>
-</div>
-
+<!-- INDICATORS -->
 <div id="indicators" class="page">
-  <h2>Indicators</h2>
-  <div id="indicatorBox"></div>
+  <h2>Indicator Engine</h2>
+  <div class="grid" id="indicatorBox"></div>
 </div>
 
+<!-- CANDLES -->
 <div id="candles" class="page">
-  <h2>Candlestick Patterns</h2>
-  <div id="candleBox"></div>
+  <h2>Candlestick Analysis</h2>
+  <div class="grid" id="candleBox"></div>
 </div>
 
+<!-- SIGNALS -->
 <div id="signals" class="page">
   <h2>Trading Signals</h2>
-  <div id="signalBox"></div>
+  <div class="grid" id="signalBox"></div>
 </div>
+
+</main>
 
 <script src="app.js"></script>
 </body>
